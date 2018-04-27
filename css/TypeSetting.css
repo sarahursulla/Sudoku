@@ -1,0 +1,81 @@
+
+
+
+body{
+font-size: 25px;
+background-color: #8470FF; 
+}
+
+
+
+div#menu { 
+           width: 100px;  } 
+div#menu ul { 
+              padding: 0 0px; 
+              width: 200px; 
+              border:1px solid; 
+              margin:30px; 
+             } 
+/*On positionne les elements du menu */ 
+div#menu ul li {       
+                 position:relative; 
+                 list-style: none; /*on enleve les icones de liste */ 
+                 border-bottom:12px solid; /*ajout d'une bordure de separation d'element:*/ 
+                } 
+div#menu ul ul { 
+                 position: absolute; 
+                 top: 0; 
+                 left: 100px; /*100px correspond au d calage a droite, on d cale de la taille du ul de base*/ 
+                }   
+div#menu li a { 
+                text-decoration: none; /* plus de soulignement pour les liens */ 
+               } 
+/* fichier pour internet explorer */ 
+body 
+      { 
+         behavior: url(csshover.htc); 
+      } 
+/* On cache tous les sous menu avec la propri t display none */ 
+div#menu ul ul 
+{ 
+         position: absolute; 
+         top: -1px; 
+         left: 100px; 
+         display:none
+ } 
+/*Lors du survol ,avec la souris, les sousmenu apparaissent grace a display: block */ 
+div#menu ul.niveau1 li.sousmenu:hover ul.niveau2, 
+div#menu ul.niveau2 li.sousmenu:hover ul.niveau3 { display:block;}
+/* fond blanc pour le menu */ 
+div#menu a 
+{ 
+             color:#000000 } 
+/* fond different au survol de la souris entre les sous-menu et les "basiques"*/ 
+div#menu li:hover 
+{ 
+                    background: #EDD } 
+div#menu li.sousmenu:hover 
+{                     
+  background: grey; } 
+/* Rajout d'une petite fleche pour les sous menu (j'ai pioch cette astuce sur le web ;) )*/ 
+div#menu li.sousmenu 
+{           
+  background: url(fleche.gif) 95% 50% no-repeat;  } 
+/* on rajoute une bordure a gauche et des padding, on doit donc r ajuster la taille 100-(8 de bordure + 8 de padding) =84 */ 
+div#menu li a {      
+  text-decoration: none; 
+                padding: 4px 0px 4px 8px; 
+                display:block; 
+                border-left: 0px solid #BBB; width:95px } 
+/* la bordure de chaque hauteur a une couleure de survol*/ 
+div#menu li a:hover 
+{ 
+                      border-left-color: red; } 
+div#menu ul ul li a:hover 
+{ 
+                            border-left-color: blue;    } 
+div#menu ul ul ul li a:hover 
+{  border-left-color: yellow; }
+
+
+
